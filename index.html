@@ -12,7 +12,6 @@
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
         }
         .navbar {
             background-color: #343a40;
@@ -21,23 +20,20 @@
             color: #fff !important;
         }
         .header-section {
-            background: url('https://lh3.googleusercontent.com/fife/ALs6j_FFjubWRG3SWRnWdfFykQMMGJKkeKOwx8cr9r5hv4tB3wtB_7A9BKygeJwW0f0YhZ5JANYeu7mYH34WoLgflYWkLYbeQv33JceKxxASubZH7cbAM7fon7BwLlRXjFOtq-r5F-8L_z0T2pgmyILuZqeGRkatW2qAsUj-P2hLCRbBUnSAyBG579wAP1NJZW9M_BDVe1iI-US0i3zr5Yn9Rl0a0a--fKPqlLMy46AmcXMf5nmgIqVzHFhhO0konEzS_f2aYhe3R0OhAqJqNoi21lunn79JIhL5FqUtCJc0aKzPpxZqxSh8eads5Psrrq9dr4zsm4Na3ooi23BlPPP8tYZJVWqa6i8t_V7kd85GNyrJiNzqfegsQ-cpC_rwD05jzVAymXRKJjUP_S4Igmyuz5aHO4zVwcGQrk0co94nx7IRGcGLJDTwOb-p_wmARnXBRCvHyzhAh5l3gK2Iy2qgwqbLDwE2wSUHMyafw8PY7_SbSWIw4PpiQsLeW18YVlw0i31h2jsT8k9QmEZLIga9xN677_DRajyOR5FhyCO3lHq5rHTeAPVqkgPxJoUHMcj0UJCWu8EngW5Gu5R_aBWGia5ZSFCghw60bzUsyGPlNmur_bujH-eAg-et9zp_sDqez-XTAjxIWLq1wqILA6f8O8jAoaKNNXnuh7_LauBODsgdedVpcVLnvTOKFFObRIE5_0bEHA47NLUmcPDpFxZ8-G3ttLD0SdGgQZOxfznNGbOibyQ0_y_EqmSrWnaB9Zu632Q9ro1o4K0qU-p_6H-Cu_kdCYPcKHBpx8vL3sHgG8beW4EsmUqmfVIfIFJ0uQZJ2DnSrl3vIvn74-mp0n0E9hym-RNK6p7MH7IFf4Tu7KYVdPwt3vYXCWtYc4ZXUUS0oqFy5wvz3RrBc28kEkHE7t0eKVFLeQzB8xUFvYFl8WYFa_ePCI4nC27qeSmr40JwG9mKyCK4EGPFKSGVF2s6ovz1B_ukQx9slp9cqf5tS5oaWUMN5KgYB-lTP4RF0wGzKBvb5FnrlATH6P9mdceGkom2P1n6Pi-HisOrQc18z1PV6vlwHOyfnPqewXnjhPbWZYrbQkoCOXVJv7sM6tmnTR1LCa-_5-WGcLoE9Ke9wFX5403rqNWMwavyu_YwsMPo_T4gPd-xy5-VxmEfChgTQZgeKL0HEZOd44YcfZpQZf6h-x87v2lY4yGNRQNNW7ZZviPfYepBkVuejuCgjVSW9PzQCITrVAKUJvpY0oi7HEjbJuMJ_qu67kpVo3djbxRUKbamTP-dmuEsneaZQoRG3VNcyhSoaAuJJYbaz2GZj0lfP-5jqhaffRIfxSt1ueb6k7zxeZpFzP3CRcTyTCewbOx1NUyrIttb_hLdL_9XqVFTFpU9FZ9WNCbcLBK7b99EhIThkYlN-Nx2tS1cqPF5rjSkHwhz_9Xnv_TpllYtCr6jhoHpl4hcRhx7xyMCbA=s512') center center/cover no-repeat;
+            background: url('https://www.w3schools.com/w3images/forest.jpg') center center/cover no-repeat;
             color: white;
             height: 100vh; /* Full viewport height */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
         }
         .header-section h1 {
             font-size: 3rem;
+            margin-bottom: 1rem;
         }
         .header-section p {
             font-size: 1.5rem;
-        }
-        .section {
-            display: none;
         }
         .card img {
             height: 200px;
@@ -49,18 +45,37 @@
             padding: 20px 0;
             text-align: center;
         }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
     </style>
     <script>
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(section => {
-                section.style.display = 'none';
+                section.classList.remove('active');
             });
-            document.getElementById('inicio').style.display = 'none'; // Hide the inicio section
-            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById('inicio').classList.remove('active'); // Hide the start section
+            document.getElementById(sectionId).classList.add('active');
         }
 
-        window.onload = function() {
-            document.getElementById('inicio').style.display = 'block'; // Show only the "inicio" section on page load
+        function showPaymentOptions() {
+            const method = document.getElementById('paymentMethod').value;
+            const paypalForm = document.getElementById('paypalForm');
+            const mercadoPagoForm = document.getElementById('mercadoPagoForm');
+
+            if (method === 'paypal') {
+                paypalForm.style.display = 'block';
+                mercadoPagoForm.style.display = 'none';
+            } else if (method === 'mercadoPago') {
+                paypalForm.style.display = 'none';
+                mercadoPagoForm.style.display = 'block';
+            } else {
+                paypalForm.style.display = 'none';
+                mercadoPagoForm.style.display = 'none';
+            }
         }
     </script>
 </head>
@@ -92,7 +107,7 @@
     </nav>
 
     <!-- Header Section -->
-    <section id="inicio" class="header-section">
+    <section id="inicio" class="header-section active">
         <div>
             <h1>Bienvenido a la Tienda MTA</h1>
             <p>Encuentra los mejores scripts y servidores para MTA, y descarga contenido gratuito.</p>
@@ -109,19 +124,15 @@
                     <div class="card">
                         <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Producto 1">
                         <div class="card-body">
-                            <h5 class="card-title">Servidor MTA Premium</h5>
-                            <p class="card-text">Descripción breve del servidor. Ideal para empezar.</p>
-                            <!-- Payment Option -->
-                            <div class="form-group">
-                                <label for="paymentMethod">Selecciona el método de pago:</label>
-                                <select id="paymentMethod" class="form-control" onchange="showPaymentOptions('Servidor MTA Premium')">
-                                    <option value="">Seleccionar</option>
-                                    <option value="paypal">PayPal</option>
-                                    <option value="mercadoPago">Mercado Pago</option>
-                                </select>
-                            </div>
-
-                            <!-- PayPal Form -->
+                            <h5 class="card-title">Producto 1</h5>
+                            <p class="card-text">Descripción breve del producto. Ideal para tus necesidades.</p>
+                            <!-- Payment Method Selector -->
+                            <select id="paymentMethod" onchange="showPaymentOptions()" class="form-control mb-2">
+                                <option value="">Selecciona un método de pago</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="mercadoPago">Mercado Pago</option>
+                            </select>
+                            <!-- Payment Forms -->
                             <div id="paypalForm" style="display:none;">
                                 <form action="https://www.paypal.com/mep/fundsmanagement/money" method="post" target="_top">
                                     <input type="hidden" name="cmd" value="_xclick">
@@ -134,8 +145,6 @@
                                     <input type="submit" class="btn btn-primary" value="Pagar con PayPal">
                                 </form>
                             </div>
-
-                            <!-- Mercado Pago Form -->
                             <div id="mercadoPagoForm" style="display:none;">
                                 <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=0000003100078710479681" class="btn btn-primary" target="_blank">Pagar con Mercado Pago</a>
                             </div>
@@ -147,54 +156,31 @@
         </div>
     </section>
 
-<!-- Gratis Section -->
-<section id="gratis" class="section py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Gratis</h2>
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Recurso 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Script Básico 1</h5>
-                        <p class="card-text">Descripción breve del script básico. Ideal para comenzar.</p>
-                        <a href="https://www.mediafire.com/file/5qhwnv7jokf8o54/login12.rar/file" class="btn btn-primary" target="_blank">Descargar</a>
+    <!-- Gratis Section -->
+    <section id="gratis" class="section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contenido Gratuito</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Archivo Gratis">
+                        <div class="card-body">
+                            <h5 class="card-title">Script Gratis 1</h5>
+                            <p class="card-text">Descripción breve del script. Ideal para pruebas.</p>
+                            <a href="https://www.mediafire.com/file/xxxxx/Script_Gratis_1.zip/file" class="btn btn-primary" target="_blank">Descargar</a>
+                        </div>
                     </div>
                 </div>
+                <!-- Add more items as needed -->
             </div>
-            <!-- Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Recurso 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Mapa Gratis</h5>
-                        <p class="card-text">Descripción breve del mapa gratuito. Perfecto para personalizar tu servidor.</p>
-                        <a href="https://www.mediafire.com/download/FILE_ID/filename" class="btn btn-primary" target="_blank">Descargar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Recurso 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Herramientas Útiles</h5>
-                        <p class="card-text">Descripción breve de las herramientas útiles. Ayuda en el desarrollo de tu servidor.</p>
-                        <a href="https://www.mediafire.com/download/FILE_ID/filename" class="btn btn-primary" target="_blank">Descargar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more cards as needed -->
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Soporte Section -->
     <section id="soporte" class="section py-5">
         <div class="container">
             <h2 class="text-center mb-4">Soporte</h2>
-            <p class="text-center">¿Necesitas ayuda? Contáctanos o revisa nuestras preguntas frecuentes.</p>
+            <p class="text-center">Para soporte técnico o consultas, contáctanos a <a href="mailto:support@example.com">support@example.com</a>.</p>
         </div>
     </section>
 
