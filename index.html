@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda MTA</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -17,7 +18,7 @@
             color: #fff !important;
         }
         .header-section {
-            background: url('images/banner.jpg') center center/cover no-repeat;
+            background: url('https://lh3.googleusercontent.com/fife/ALs6j_FJQ0cUqk9gXaw8nmupvqWOWGiZqMv2py_swj_dTNYFAE5a46KPorsAQ-nZTjd8GGqwEtOSIVDaXuYz8zYQdgp7TjlXVaw776VACS9_QiPycFzAMgGuoY4bo_lkYhKMLpjUSYkIVWiE0rlh1AYyerGRyLoYAdQf9BbrgzittC-NHJId1vkN5hKIO3E6oMxCGZb6lnOw_0SvMrkXFJd6XVRcsjB_yOT9Iuh8ffnaWWBLQHZHCPefzbqnaiVl2B0LYCVn5XiMgbbMyOFIDGae-zfQfVt2Y7R1kkzHAFfisG2OrZtTfWxdG4Y8WTD8kkNuBPeTfjvJgWQsL1n9XaudXWje2nnhf4fr_47qQPuY7o0IAal0yrBHApGSoCxAi2aZGwDBNMFNN5nXMy2OU_w5OeL1GVPjDESsRBmiLQMzYQIAxOSkouc744PjYG91djCT1IE2lMU9SC3CoS8Ky9Jecmkl_fTWhjzaecnnd5esGXRXQfBdgrTYMwxYTBz_FxRC3WPTdnAx83w0UMhwvj9102k6zTu00yZnzFH3DU68G61ScPWNz1ccWiUXorl2kYRoupI7NIEIJnnx2IzCoLcQt5c69i9n22oAtsE2TIAoyCkiov3WfWjISUqYv8eL6np6AryBHXjt-5Wdg3K15ERT7xQLtcw6L5jX5f-_tgON0hFReuKqI5u29LYJruqnLlQcq_4hEXOFhR-85sf7dK5Chn6vq1rou1cgTLmUIE-zAbLuuob7DY5L0ArnHjZyTnfFWvJVBHydjDMBqQDsJsCfHDtVA48P_hxnIF8sD_kWAyiS-4yq8Av9Pt4e31Wk_3YuDrxtrP9nGWifmegmZxorxiqySEaDbwn2gqgUbiprdTdVUtGcCLUL6wYnoDGjGStfTAQhUElsEIrO9EhDLhCTs-DuVp3tKBRSwtAxAIbJevQyowWNeAYDyioGSDr-6WX8rMXrb4hkIDEO8qFONLgHond2FVVUUloJgQZu8hv0BvyihEB4qsr4F4jWqIhLUYONWIsu60am9YO7mU1b50Ccw7gi3wIFJ_o7xajNSo9xBqwWOXOymvnDM1cISkU9pz9t13Q-2MtcGk4nKMZZzdqns04kMYrKfqGVIso6l_TsFkjQ07WDmVscBRXdY0uiSBwASe7Ap-qGUmDgKyBix44GlApCj2hbVbkVXxXqoXNHhjFJ1FU2TQoIAIc2e6xcmDGbbSeWB2c2aGJC2cB8W_XJfC2tXFGQ52D-tANRy2h3_U05W11L5r8zL2b7nj5K15uplbpgd8wDrHaBcz3ZtrztomkSEg=s512') center center/cover no-repeat;
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -35,6 +36,7 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Tienda MTA</a>
@@ -60,18 +62,104 @@
         </div>
     </nav>
 
+    <!-- Header Section -->
     <section class="header-section">
         <h1>Bienvenido a la Tienda MTA</h1>
         <p>Encuentra los mejores scripts y servidores para MTA, y descarga contenido gratuito.</p>
-        <a href="#tienda" class="btn btn-primary btn-lg">Ver Tienda</a>
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#imageModal">Ver Tienda</button>
     </section>
 
-    <!-- Otras secciones como la tienda, gratis y soporte -->
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen de la Tienda</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Imagen de la tienda">
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Tienda Section -->
+    <section id="tienda" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Tienda</h2>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Servidor MTA Premium</h5>
+                            <p class="card-text">Descripción breve del servidor. Ideal para empezar.</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Producto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Script de Policía</h5>
+                            <p class="card-text">Añade un sistema de policía completo a tu servidor.</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Pack de Skins</h5>
+                            <p class="card-text">Variedad de skins para personalizar tu experiencia.</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gratis Section -->
+    <section id="gratis" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Gratis</h2>
+            <p class="text-center">Descarga recursos y scripts gratuitos para tu servidor MTA.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="list-group">
+                        <li class="list-group-item">Script Básico 1</li>
+                        <li class="list-group-item">Mapa Gratis</li>
+                        <li class="list-group-item">Herramientas Útiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soporte Section -->
+    <section id="soporte" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Soporte</h2>
+            <p class="text-center">¿Necesitas ayuda? Contáctanos o revisa nuestras preguntas frecuentes.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Tienda MTA. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
